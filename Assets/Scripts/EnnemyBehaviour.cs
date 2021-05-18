@@ -58,7 +58,7 @@ public class EnnemyBehaviour : MonoBehaviour
                 }
             }
 
-            if (destination == null || destination.tag == "Untagged")
+            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key")
             {
                 isMoving = true;
                 Destination = this.transform.position + direction;
@@ -87,6 +87,14 @@ public class EnnemyBehaviour : MonoBehaviour
             else if (destination.tag == "Door")
             {
                
+                canMove = false;
+                Destroy(this.gameObject);
+
+
+            }
+            else if (destination.tag == "Win")
+            {
+
                 canMove = false;
                 Destroy(this.gameObject);
 

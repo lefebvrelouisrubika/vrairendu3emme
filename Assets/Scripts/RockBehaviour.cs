@@ -56,7 +56,7 @@ public class RockBehaviour : MonoBehaviour
                 }
             }
             //Debug.Log(Hit.collider.gameObject.tag);
-            if (destination == null || destination.tag == "Untagged")
+            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key")
             {
                 isMoving = true;
                 Destination = this.transform.position + direction;
@@ -64,30 +64,25 @@ public class RockBehaviour : MonoBehaviour
             }
             else if (destination.tag == "Wall")
             {
-                Debug.Log("There is a Wall and your not yet a ghost...");
                 canMove = false;
             }
             else if (destination.tag == "Rock")
             {
-                Debug.Log("Too Much Rocks for you");
+
                 canMove = false;
-                //destination.GetComponent<RockBehaviour>().MoveRock(direction);
+
             }
             else if (destination.tag == "Ennemy")
             {
-                Debug.Log("There is an ennemy behind this rock, it would be too cruel to splash him with a rock");
+
                 canMove = false;
-                //HitEnnemy.collider.gameObject.GetComponent<EnnemyBehaviour>().MoveEnnmy(direction);
+
             }
             else if (destination.tag == "Door")
             {
-                Debug.Log("The Door cannot be open by pushing a rock on it");
+
                 canMove = false;
-                //if (hasKey)
-                //{
-                //    Debug.Log("CanDestroyDoor");
-                //    destination.GetComponent<DoorBehaviour>().DestroyDoor();
-                //}
+
             }
 
         }
