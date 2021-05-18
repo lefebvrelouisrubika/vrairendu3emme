@@ -12,8 +12,9 @@ public class EnnemyBehaviour : MonoBehaviour
     private bool canMove = false;
     private Vector3 Direction;
     private GameObject[] allObjects;
-    //private List<GameObject>
-
+    private bool facingRight = true;
+    private Animator Animator;
+    
     private void Start()
     {
         UpdateAllObjects();
@@ -21,6 +22,7 @@ public class EnnemyBehaviour : MonoBehaviour
         {
             Debug.Log(obj.name);
         }
+        Animator = this.gameObject.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -41,7 +43,7 @@ public class EnnemyBehaviour : MonoBehaviour
     public void Move(Vector3 direction)
     {
         UpdateAllObjects();
-
+        AnimationsGestion();
         if (!isMoving)
         {
             Debug.Log("MoveRock");
@@ -55,52 +57,52 @@ public class EnnemyBehaviour : MonoBehaviour
                     destination = obj;
                 }
             }
-            //Debug.Log(Hit.collider.gameObject.tag);
+
             if (destination == null || destination.tag == "Untagged")
             {
                 isMoving = true;
                 Destination = this.transform.position + direction;
+                MoveAnimation();
                 StartCoroutine(MoveCoroutine());
             }
             else if (destination.tag == "Wall")
             {
-                Debug.Log("There is a Wall and your not yet a ghost...");
+                
                 canMove = false;
                 Destroy(this.gameObject);
             }
             else if (destination.tag == "Rock")
             {
-                Debug.Log("Too Much Rocks for you");
+                
                 canMove = false;
                 Destroy(this.gameObject);
-                //destination.GetComponent<RockBehaviour>().MoveRock(direction);
+
             }
             else if (destination.tag == "Ennemy")
             {
-                Debug.Log("There is an ennemy behind this ennemy, it would be too cruel to splash him with a rock");
+                
                 canMove = false;
-                //HitEnnemy.collider.gameObject.GetComponent<EnnemyBehaviour>().MoveEnnmy(direction);
+
             }
             else if (destination.tag == "Door")
             {
-                Debug.Log("this door stop ennemies");
+               
                 canMove = false;
                 Destroy(this.gameObject);
 
-                //if (hasKey)
-                //{
-                //    Debug.Log("CanDestroyDoor");
-                //    destination.GetComponent<DoorBehaviour>().DestroyDoor();
-                //}
+
             }
 
         }
+        
 
 
     }
+
+
     IEnumerator MoveCoroutine()
     {
-        Debug.Log("RockCorout");
+
         while (Vector3.Distance(this.transform.position, Destination) > 0.001f)
         {
             this.transform.position = Vector2.Lerp(this.transform.position, Destination, TLerpMove);
@@ -111,6 +113,32 @@ public class EnnemyBehaviour : MonoBehaviour
         canMove = false;
 
     }
+    public void AnimationsGestion()
+    {
 
+        if (Direction == Vector3.right)
+        {
+            facingRight = false;
+            Animator.SetBool("FacingRight", false);
+        }
+        if (Direction == Vector3.left)
+        {
+            facingRight = true;
+            Animator.SetBool("FacingRight", true);
+        }
+    }
+
+    public void MoveAnimation()
+    {
+        if (facingRight == true)
+        {
+            Animator.SetTrigger("PushedRight");
+        }
+        else
+        {
+            Animator.SetTrigger("PushedLeft");
+        }
+
+    }
 
 }

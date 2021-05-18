@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: d3124e91efc69ad43b40551cc1e4cd9d
+guid: 580420c1793faa74f8d8d4e31964f6e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6999977784215107374
-    second: PC Computer - Helltaker - Hero_0
+      213: -2228025167531297802
+    second: Helltaker.Right.Kick_27
   - first:
-      213: -4059965684367553487
-    second: PC Computer - Helltaker - Hero_1
+      213: -6328080763711245204
+    second: Helltaker.Right.Kick_28
   - first:
-      213: -1002812691846288624
-    second: PC Computer - Helltaker - Hero_2
+      213: -2144784340983785927
+    second: Helltaker.Right.Kick_29
   - first:
-      213: -7941235222565635654
-    second: PC Computer - Helltaker - Hero_3
+      213: 4439948438988029869
+    second: Helltaker.Right.Kick_30
   - first:
-      213: -7782118131269661569
-    second: PC Computer - Helltaker - Hero_4
+      213: 6426888652130093579
+    second: Helltaker.Right.Kick_31
   - first:
-      213: 3872816912759171021
-    second: PC Computer - Helltaker - Hero_5
+      213: -2091157998703893966
+    second: Helltaker.Right.Kick_32
   - first:
-      213: 160469436476886275
-    second: PC Computer - Helltaker - Hero_6
+      213: -5976343330469362997
+    second: Helltaker.Right.Kick_33
   - first:
-      213: 8690149594025270851
-    second: PC Computer - Helltaker - Hero_7
+      213: -3754558527045395005
+    second: Helltaker.Right.Kick_34
   - first:
-      213: 3795785258212691294
-    second: PC Computer - Helltaker - Hero_8
+      213: -5675286073418932941
+    second: Helltaker.Right.Kick_35
   - first:
-      213: 5789509958516825186
-    second: PC Computer - Helltaker - Hero_9
+      213: -2552876535013702669
+    second: Helltaker.Right.Kick_36
   - first:
-      213: -8829538339530588948
-    second: PC Computer - Helltaker - Hero_10
+      213: -681173509455541011
+    second: Helltaker.Right.Kick_37
   - first:
-      213: 761886047390655904
-    second: PC Computer - Helltaker - Hero_11
+      213: -3251661464009081309
+    second: Helltaker.Right.Kick_38
   - first:
-      213: -7646187186509330079
-    second: AnimationKick_0
+      213: -4519324623553029145
+    second: Helltaker.Right.Kick_39
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,274 +150,274 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_0
+      name: Helltaker.Right.Kick_27
       rect:
         serializedVersion: 2
-        x: 1
-        y: 624
-        width: 101
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d88b30fa451bde90800000000000000
-      internalID: -6999977784215107374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_1
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 624
+        x: 0
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13c0ffe78ba18a7c0800000000000000
-      internalID: -4059965684367553487
+      spriteID: 6f3baaa2ae67411e0800000000000000
+      internalID: -2228025167531297802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_2
+      name: Helltaker.Right.Kick_28
       rect:
         serializedVersion: 2
-        x: 201
-        y: 624
+        x: 100
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01baf3e7b2b4512f0800000000000000
-      internalID: -1002812691846288624
+      spriteID: c643201b2142e28a0800000000000000
+      internalID: -6328080763711245204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_3
+      name: Helltaker.Right.Kick_29
       rect:
         serializedVersion: 2
-        x: 301
-        y: 624
+        x: 200
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab9b729b3a01bc190800000000000000
-      internalID: -7941235222565635654
+      spriteID: 93657d361023c32e0800000000000000
+      internalID: -2144784340983785927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_4
+      name: Helltaker.Right.Kick_30
       rect:
         serializedVersion: 2
-        x: 401
-        y: 624
+        x: 300
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7c8b818acc500490800000000000000
-      internalID: -7782118131269661569
+      spriteID: daf7ee6d49ddd9d30800000000000000
+      internalID: 4439948438988029869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_5
+      name: Helltaker.Right.Kick_31
       rect:
         serializedVersion: 2
-        x: 501
-        y: 624
+        x: 400
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc7a22d86720fb530800000000000000
-      internalID: 3872816912759171021
+      spriteID: b0a04319d25e03950800000000000000
+      internalID: 6426888652130093579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_6
+      name: Helltaker.Right.Kick_32
       rect:
         serializedVersion: 2
-        x: 601
-        y: 624
+        x: 500
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30d038e2a1a1a3200800000000000000
-      internalID: 160469436476886275
+      spriteID: 232a90e21e6baf2e0800000000000000
+      internalID: -2091157998703893966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_7
+      name: Helltaker.Right.Kick_33
       rect:
         serializedVersion: 2
-        x: 701
-        y: 624
+        x: 600
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e91ec630d999870800000000000000
-      internalID: 8690149594025270851
+      spriteID: bc2499ba763cf0da0800000000000000
+      internalID: -5976343330469362997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_8
+      name: Helltaker.Right.Kick_34
       rect:
         serializedVersion: 2
-        x: 801
-        y: 624
+        x: 700
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d8e67d4965da430800000000000000
-      internalID: 3795785258212691294
+      spriteID: 3cd9b0389e025ebc0800000000000000
+      internalID: -3754558527045395005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_9
+      name: Helltaker.Right.Kick_35
       rect:
         serializedVersion: 2
-        x: 901
-        y: 624
+        x: 800
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c5bf412a8785050800000000000000
-      internalID: 5789509958516825186
+      spriteID: 33d942b92655d31b0800000000000000
+      internalID: -5675286073418932941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_10
+      name: Helltaker.Right.Kick_36
       rect:
         serializedVersion: 2
-        x: 1001
-        y: 624
+        x: 900
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec369d39ad277580800000000000000
-      internalID: -8829538339530588948
+      spriteID: 3f3041f215c529cd0800000000000000
+      internalID: -2552876535013702669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PC Computer - Helltaker - Hero_11
+      name: Helltaker.Right.Kick_37
       rect:
         serializedVersion: 2
-        x: 1101
-        y: 624
+        x: 1000
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5eb0ec253c29a00800000000000000
-      internalID: 761886047390655904
+      spriteID: dec0f7a5d4cfb86f0800000000000000
+      internalID: -681173509455541011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationKick_0
+      name: Helltaker.Right.Kick_38
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 278
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e79e36027cfd2d0800000000000000
+      internalID: -3251661464009081309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Helltaker.Right.Kick_39
       rect:
         serializedVersion: 2
         x: 1199
-        y: 624
+        y: 278
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 169c7fdd34943e590800000000000000
-      internalID: -7646187186509330079
+      spriteID: 7eb127403322841c0800000000000000
+      internalID: -4519324623553029145
       vertices: []
       indices: 
       edges: []
