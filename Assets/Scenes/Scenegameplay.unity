@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 1029681604}
   - component: {fileID: 1029681607}
   m_Layer: 0
-  m_Name: Pic1chu
+  m_Name: Pics
   m_TagString: Pics
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
