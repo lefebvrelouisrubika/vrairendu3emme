@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Caractercontroller : MonoBehaviour
 {
@@ -16,7 +18,11 @@ public class Caractercontroller : MonoBehaviour
     private GameObject myPics = null;
     public int stepCounter;
     private int previousStepCounter;
-    private bool hasNotYetCheckPïcs = true;
+    private bool hasNotYetCheckPics = true;
+    public Text StepCounter;
+    private bool facingRight = true;
+    private Animator Animator;
+
 
     //private List<GameObject>
 
@@ -27,6 +33,9 @@ public class Caractercontroller : MonoBehaviour
         {
             Debug.Log(obj.name);
         }
+        Animator = this.gameObject.GetComponent<Animator>();
+
+        
     }
 
     private void UpdateAllObjects()
@@ -36,44 +45,70 @@ public class Caractercontroller : MonoBehaviour
 
     void Update()
     {
+
+        ResetScene();
+
         if (!isMoving)
         {
-            if(isOnPics & hasNotYetCheckPïcs)
+            if(isOnPics & hasNotYetCheckPics)
             {
-                Debug.Log("CheckPicsState");
-                hasNotYetCheckPïcs = false;
+
+                hasNotYetCheckPics = false;
             }
-            if (Input.GetKeyDown("s"))
+            if (Input.GetKeyDown("down"))
             {
-                Debug.Log("bas");
+
                 Vector3 direction = Vector3.down;
                 Move(direction);
             }
-            else if (Input.GetKeyDown("z"))
+            else if (Input.GetKeyDown("up"))
             {
-                Debug.Log("haut");
+
                 Vector3 direction = Vector3.up;
                 Move(direction);
             }
-            else if (Input.GetKeyDown("q"))
+            else if (Input.GetKeyDown("left"))
             {
-                Debug.Log("goche");
+                facingRight = false;
+                Animator.SetBool("FacingRight",false);
                 Vector3 direction = Vector3.left;
                 Move(direction);
             }
-            else if (Input.GetKeyDown("d"))
+            else if (Input.GetKeyDown("right"))
             {
-                Debug.Log("drouate");
+                facingRight = true;
+                Animator.SetBool("FacingRight", true);
                 Vector3 direction = Vector3.right;
                 Move(direction);
             }
         }
-        if (isOnPics) Debug.Log("There is pics behind me ! Heeeeeelllp !");
+
+        TextUpdate();
+    }
+
+
+    public void ResetScene()
+    {
+        if (stepCounter <= 0)
+        {
+            SceneManager.LoadScene("SceneGameplay");
+        }
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("SceneGameplay");
+        }
+
+        
+    }
+
+    public void TextUpdate()
+    {
+        StepCounter.text = stepCounter.ToString();
     }
 
     public void Move(Vector3 direction)
     {
-        stepCounter++;
+        stepCounter--;
         UpdateAllObjects();
         Vector3 origin = this.transform.position;
         GameObject destination = null;
@@ -94,26 +129,27 @@ public class Caractercontroller : MonoBehaviour
         }
         else if (destination.tag == "Wall")
         {
+            KickAnimation();
             isMoving = true;
-            Debug.Log("There is a Wall and your not yet a ghost...");
             isMoving = false;
-            hasNotYetCheckPïcs = true;
+            hasNotYetCheckPics = true;
         }
         else if (destination.tag == "Rock")
         {
+            KickAnimation();
             isMoving = true;
-            Debug.Log("TryMoveRock");
             destination.GetComponent<RockBehaviour>().MoveRock(direction);
             isMoving = false;
-            hasNotYetCheckPïcs = true;
+            hasNotYetCheckPics = true;
         }
         else if (destination.tag == "Ennemy")
         {
+            KickAnimation();
             isMoving = true;
             Debug.Log("Pushennemy");
             destination.GetComponent<EnnemyBehaviour>().MoveEnnemy(direction);
             isMoving = false;
-            hasNotYetCheckPïcs = true;
+            hasNotYetCheckPics = true;
         }
         else if (destination.tag == "Door")
         {
@@ -128,10 +164,24 @@ public class Caractercontroller : MonoBehaviour
             }
             else
             {
+                KickAnimation();
                 Debug.Log("Cannot Destroy theDoor ! It's too strong for you !");
-                hasNotYetCheckPïcs = true;
+                hasNotYetCheckPics = true;
             }
         }
+    }
+
+    public void KickAnimation()
+    {
+        if (facingRight == true)
+        {
+            Animator.SetTrigger("KickTriggerRight");
+        }
+        else
+        {
+            Animator.SetTrigger("KickTriggerLeft");
+        }
+
     }
 
 
@@ -145,7 +195,7 @@ public class Caractercontroller : MonoBehaviour
         }
         this.transform.position = Destination;
         isMoving = false;
-        hasNotYetCheckPïcs = true;
+        hasNotYetCheckPics = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -163,6 +213,10 @@ public class Caractercontroller : MonoBehaviour
         {
             Destroy(collision.gameObject);
             hasKey = true;
+        }
+        if (collision.tag == "Win")
+        {
+            Debug.Log("Win");
         }
         if (collision.tag == "Pics")
         {
