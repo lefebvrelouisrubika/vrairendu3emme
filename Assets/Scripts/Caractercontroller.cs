@@ -2,14 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Caractercontroller : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public float TLerpMove = 0.075f;
+    public float TLerpMove = 0.1f;
     private Vector3 Destination;
     private bool isMoving = false;
     public bool hasKey = false;
@@ -22,6 +21,7 @@ public class Caractercontroller : MonoBehaviour
     public Text StepCounter;
     private bool facingRight = true;
     private Animator Animator;
+    public GameObject WinScreen;
 
 
     //private List<GameObject>
@@ -31,7 +31,7 @@ public class Caractercontroller : MonoBehaviour
         UpdateAllObjects();
         foreach (GameObject obj in allObjects)
         {
-            Debug.Log(obj.name);
+            //Debug.Log(obj.name);
         }
         Animator = this.gameObject.GetComponent<Animator>();
 
@@ -46,8 +46,8 @@ public class Caractercontroller : MonoBehaviour
     void Update()
     {
 
-        ResetScene();
 
+        
         if (!isMoving)
         {
             if(isOnPics & hasNotYetCheckPics)
@@ -84,22 +84,20 @@ public class Caractercontroller : MonoBehaviour
         }
 
         TextUpdate();
+        EmptyStepCounter();
     }
 
-
-    public void ResetScene()
+    public void EmptyStepCounter()
     {
         if (stepCounter <= 0)
         {
-            SceneManager.LoadScene("SceneGameplay");
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            SceneManager.LoadScene("SceneGameplay");
+            BuildManager.Instance.ResetScene();
         }
 
-        
+
     }
+
+
 
     public void TextUpdate()
     {
@@ -116,12 +114,12 @@ public class Caractercontroller : MonoBehaviour
         {
             if (Vector3.Distance(obj.transform.position, origin + direction) < 0.1f & obj.tag != "Pics" & obj.tag != "Key")
             {
-                Debug.Log(obj.name);
+                
                 destination = obj;
             }
         }
-        //Debug.Log(Hit.collider.gameObject.tag);
-        if (destination == null || destination.tag == "Pics" || destination.tag == "Untagged")
+        
+        if (destination == null || destination.tag == "Pics" || destination.tag == "Untagged" || destination.tag == "Key")
         {
             isMoving = true;
             Destination = this.transform.position + direction;
@@ -146,18 +144,19 @@ public class Caractercontroller : MonoBehaviour
         {
             KickAnimation();
             isMoving = true;
-            Debug.Log("Pushennemy");
+            
             destination.GetComponent<EnnemyBehaviour>().MoveEnnemy(direction);
             isMoving = false;
             hasNotYetCheckPics = true;
         }
         else if (destination.tag == "Door")
         {
-            Debug.Log("TryDestroyDoor");
+            
             if (hasKey)
             {
-                Debug.Log("Can Destroy theDoor");
+                
                 destination.GetComponent<DoorBehaviour>().DestroyDoor();
+                
                 isMoving = true;
                 Destination = this.transform.position + direction;
                 StartCoroutine(MoveCoroutine());
@@ -165,7 +164,7 @@ public class Caractercontroller : MonoBehaviour
             else
             {
                 KickAnimation();
-                Debug.Log("Cannot Destroy theDoor ! It's too strong for you !");
+                
                 hasNotYetCheckPics = true;
             }
         }
@@ -217,6 +216,7 @@ public class Caractercontroller : MonoBehaviour
         if (collision.tag == "Win")
         {
             Debug.Log("Win");
+            WinScreen.SetActive(true);
         }
         if (collision.tag == "Pics")
         {

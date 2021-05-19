@@ -20,7 +20,7 @@ public class EnnemyBehaviour : MonoBehaviour
         UpdateAllObjects();
         foreach (GameObject obj in allObjects)
         {
-            Debug.Log(obj.name);
+
         }
         Animator = this.gameObject.GetComponent<Animator>();
     }
@@ -53,12 +53,12 @@ public class EnnemyBehaviour : MonoBehaviour
             {
                 if (Vector3.Distance(obj.transform.position, origin + direction) < 0.1f)
                 {
-                    Debug.Log(obj.name);
+                    
                     destination = obj;
                 }
             }
 
-            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key")
+            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key"||destination.tag == "Pics")
             {
                 isMoving = true;
                 Destination = this.transform.position + direction;

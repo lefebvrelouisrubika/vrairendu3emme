@@ -19,7 +19,7 @@ public class RockBehaviour : MonoBehaviour
         UpdateAllObjects();
         foreach (GameObject obj in allObjects)
         {
-            Debug.Log(obj.name);
+            //Debug.Log(obj.name);
         }
     }
     private void Update()
@@ -34,7 +34,7 @@ public class RockBehaviour : MonoBehaviour
     }
     public void MoveRock(Vector3 direction)
     {
-        Debug.Log("AuthorizeMoveRock");
+        
         Direction = direction;
         canMove = true;
     }
@@ -44,19 +44,19 @@ public class RockBehaviour : MonoBehaviour
 
         if (!isMoving)
         {
-            Debug.Log("MoveRock");
+            
             Vector3 origin = this.transform.position;
             GameObject destination = null;
             foreach (GameObject obj in allObjects)
             {
                 if (Vector3.Distance(obj.transform.position, origin + direction) < 0.1f)
                 {
-                    Debug.Log(obj.name);
+                    
                     destination = obj;
                 }
             }
-            //Debug.Log(Hit.collider.gameObject.tag);
-            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key")
+            
+            if (destination == null || destination.tag == "Untagged" || destination.tag == "Key"|| destination.tag == "Pics")
             {
                 isMoving = true;
                 Destination = this.transform.position + direction;
@@ -91,7 +91,7 @@ public class RockBehaviour : MonoBehaviour
     }
     IEnumerator MoveCoroutine()
     {
-        Debug.Log("RockCorout");
+        
         while (Vector3.Distance(this.transform.position, Destination) > 0.001f)
         {
             this.transform.position = Vector2.Lerp(this.transform.position, Destination, TLerpMove);

@@ -15,7 +15,7 @@ public class PicsBehaviour : MonoBehaviour
     private void Update()
     {
         isPicky = myPlayer.stepCounter % 2 == 0;
-        if (isPicky) { picRenderer.material.color = new Color(0,1,0,0.85f); }
-        else { picRenderer.material.color = new Color(0, 1, 0, 0.15f); }
+        if (isPicky) { picRenderer.material.color = new Color(1,1,1,0.85f); }
+        else { picRenderer.material.color = new Color(1, 1, 1, 0.15f); }
     }
 }
